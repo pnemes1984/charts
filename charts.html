@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="charts.css">
+        <script src="charts.js"></script>
+        <title>Charts</title>
+    </head>
+    
+    <body>
+        <div id="display"></div>
+    </body>
+</html>
+
+
+<style>
+    #display {
+        width: 80vw;
+        height: 80vh;
+        border: 1px solid black;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        charts.bar({
+            target: 'display',
+            id:'test',
+            title: 'Test barchart',
+            data: {
+                'egyeske': 10,
+                'ketteske': 54,
+                'hármaska': 37,
+                'négyeske': -25,
+                'ötöske': 62,
+                'hatoska': 103.5,
+                'heteske': 21
+            }
+        });
+    });
+</script>

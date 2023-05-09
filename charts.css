@@ -1,0 +1,145 @@
+*, *::after,*::before {
+    box-sizing: border-box;
+}
+
+/* COLORS */
+body {
+    --ruler: rgb(220, 220, 220);
+    
+    --color_1: rgb(70, 95, 95);
+    --color_1h: rgb(90, 115, 115);
+    --color_2: rgb(215, 185, 90);
+    --color_2h: rgb(235, 205, 110);
+    --color_3: rgb(180, 30, 30);
+    --color_3h: rgb(200, 50, 50);
+    --color_4: rgb(150, 50, 150);
+    --color_4h: rgb(170, 70, 170);
+    
+    --highlight: rgb(255, 116, 27);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#test {
+    width: 10vh;
+    height: 10vh;
+    background-color: var(--color_4);
+}
+
+#test:hover {
+    background-color: var(--color_4h);
+}
+
+/********************************************************* FRAMEWORK ELEMENTS *************************************************************/
+.chart-container {
+    padding: 2vh;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-weight: bold;
+}
+
+.chart {
+    position: relative;
+}
+
+/* BACKGROUND */
+.chart-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 100;
+    position: absolute;
+}
+
+.chart-ruler {
+    height: 3px;
+    border: 1px solid var(--ruler);
+    background-color: var(--ruler);
+    z-index: 100;
+    opacity: .5;
+}
+
+.chart-ruler_0 {
+    background-color: black;
+}
+
+/* HORIZONTAL AXIS */
+.chart-horizontal_axis {
+    position: absolute;
+    bottom: 2vh;
+    height: 10%;
+    border-top: 1px solid black;
+    
+    display: flex;
+    justify-content: space-around;
+}
+
+.chart-key {
+    text-align: center;
+    margin-top:1vh;
+}
+
+/* VERTICAL AXIS */
+.chart-vertical_axis {
+    position: absolute;
+    top: 0px;
+    left: 2vh;
+    border-right: 1px solid black;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.chart-vertical_number {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 1vh;
+    border-top: 1px solid black;
+    transform: translateY(1px);
+    
+    cursor: pointer;
+}
+
+.chart-vertical_number:hover {
+    color: var(--highlight);
+}
+
+.chart-vertical_number:first-of-type {
+    border-top: none;
+}
+
+/****************************************************************** BARCHART *****************************************************************/
+.chart-chartspace {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 101;
+    
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: space-around;
+}
+
+.chart-bar {
+    z-index: 200;
+    opacity: .8;
+    transform: translateY(1px);
+}
+
+.chart-bar:hover {
+    opacity: 1;
+}
